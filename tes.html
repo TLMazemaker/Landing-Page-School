@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Export HTML Table to Excel</title>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>jane@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button onclick="exportToExcel()">Export to Excel</button>
+
+  <script>
+    function exportToExcel() {
+      var wb = XLSX.utils.table_to_book(document.getElementById('myTable'), { sheet: "Sheet JS" });
+      var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+
+      saveAs(new Blob([wbout], { type: 'application/octet-stream' }), 'table.xlsx');
+    }
+
+    function saveAs(blob, filename) {
+      var link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+    }
+  </script>
+</body>
+</html>

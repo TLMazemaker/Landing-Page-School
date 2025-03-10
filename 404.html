@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>404 - Page Not Found</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="assets/404.css">
+        <link rel="shortcut icon" type="image/png" href="img/zion.png">
+    </head>
+    <body>
+        <div class="center">
+            <section class="error">
+                <h1 class="error__title">404</h1>
+                <h2 class="error__type">Page Not Found</h2>
+                <p class="error__cta">Maaf, halaman yang anda inginkan tidak tersedia, silahkan kembali ke <a class="error__link error__link--purple" href="index.php" target="_blank">Halaman Login</a></p>
+            </section>
+        </div>
+
+        <div class="astronaut">
+            <img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png" alt="" class="src">
+            <!--<img src="https://www.freepnglogos.com/uploads/among-us-png/green-among-us-png-character-0.png" alt="" class="src"> -->
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var body = document.body;
+                setInterval(createStar, 100);
+                function createStar(){
+                    var right = Math.random() * 500;
+                    var top = Math.random() * screen.height;
+                    var star = document.createElement("div");
+
+                    star.classList.add("star")
+                    body.appendChild(star);
+                    setInterval(runStar, 10);
+                    star.style.top = top+"px";
+                    function runStar(){
+                        if(right >= screen.width){
+                            star.remove();
+                        }
+                        right+=3;
+                        star.style.right=right+"px";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
