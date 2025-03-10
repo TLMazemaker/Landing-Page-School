@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+.header {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('path/to/Quicksand-Regular.woff2') format('woff2'),
+         url('path/to/Quicksand-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.text h4 {
+    font-family: "Open sans", sans-serif;
+    font-size: 34px;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.text p {
+    font-family: "Quicksand",Georgia,'Times New Roman',Times,serif;
+    margin-top: 10px;
+}
+
+.header .logo img {
+    width: 135px;
+    height: 135px;
+    margin: 10px 0 10px 20px;
+}
+
+li {
+    list-style: none;
+}
+  
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1224px;
+    margin: auto;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+  
+.nav-link {
+    transition: 0.3s ease-out;
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+}
+
+.nav-link-a {
+    transition: 0.3s ease-out;
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+    color:#0093DD;
+}
+
+.nav-link:hover {
+    color: #0093DD;
+}
+
+.nav-link-a:hover {
+    color: #000000;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px; /* adjust the top value to position the hamburger icon vertically */
+    right: 20px; /* adjust the right value to position the hamburger icon horizontally */
+    z-index: 9999; /* add a high z-index to ensure it's positioned above other elements */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #000000;
+}
+
+@media(max-width:1024px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 9999;
+    }
+    .nav-item {
+        margin: 16px 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+body {
+    animation: fade-in 1s ease-in forwards;
+    background-image: url('../img/s.png'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.login {
+    margin: 50px 100px 20px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 500px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.die-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 40px;
+    padding: 35px;
+    margin-left: 15px;
+    max-width: 400px;
+}
+
+.der-input {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.der-input input[type="text"],
+.der-input input[type="password"] {
+  border: 3px solid #000; /* Set the border weight to 3px */
+  width: 350px;
+  height: 50px;
+  position: relative;
+  transition: border-color 0.3s ease-in-out;
+  margin-left: 25px;
+}
+
+.der-input input[type="text"]::placeholder,
+.der-input input[type="password"]::placeholder {
+  color: #CECECE;
+  font-size: 15px;
+  font-family: "Quicksand",Georgia,'Times New Roman',Times,serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.der-input input[type="text"]:focus,
+.der-input input[type="password"]:focus {
+  border-color: #1D95CB;
+  outline: none;
+  box-shadow: none;
+}
+
+.der-input button {
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 100px;
+    font-size: 40px;
+    color: #1D95C8;
+    font-family: 'Quicksand',Georgia,'Times New Roman',Times,serif;
+    font-weight: 700;
+    border: 3px solid #1D95CB;
+    transition: 0.3s ease-out;
+}
+
+.der-input button:hover {
+    transition: 0.3s ease-out;
+    background-color: #1D95C8;
+    color: #FFFFFF;
+}
+
+.login p {
+    margin: 30px auto 0 30px;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: "Quicksand",Georgia,'Times New Roman',Times,serif;
+}
+
+/* Example CSS to adjust the size of Font Awesome icon */
+#togglePassword::before {
+    /* Adjust the size of the icon using font-size property */
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(-200%, 50%);
+    cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+    margin-left: 25px;
+    font-size: 20px;
+}

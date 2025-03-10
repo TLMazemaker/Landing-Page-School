@@ -1,0 +1,253 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    position: fixed;
+    z-index: 9999;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.text h4 {
+    font-family: "Open sans", sans-serif;
+    font-size: 34px;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.text p {
+    font-family: 'Quicksand',Georgia,'Times New Roman',Times,serif;
+    margin-top: 10px;
+}
+
+.header .logo img {
+    width: 135px;
+    height: 135px;
+    margin: 10px 0 10px 20px;
+}
+
+li {
+    list-style: none;
+}
+  
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1224px;
+    margin: auto;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+  
+.nav-link {
+    transition: 0.3s ease-out;
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+}
+
+.nav-link-a {
+    transition: 0.3s ease-out;
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+    color:#0093DD;
+}
+
+.nav-link-b {
+    transition: 0.3s ease-out;
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+    color:#FF0000;
+}
+
+.nav-link:hover {
+    color: #0093DD;
+}
+
+.nav-link-a:hover, .nav-link-b:hover {
+    color: #000000;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px; /* adjust the top value to position the hamburger icon vertically */
+    right: 20px; /* adjust the right value to position the hamburger icon horizontally */
+    z-index: 9999; /* add a high z-index to ensure it's positioned above other elements */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #000000;
+}
+
+@media(max-width:1024px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 9999;
+    }
+    .nav-item {
+        margin: 16px 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+body {
+    animation: fade-in 1s ease-in forwards;
+    background-image: url('../img/s.png'); /* Replace with your image file path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.main {
+    position: relative;
+    height: 500;
+}
+
+.main p {
+    font-family: 'Quicksand',Georgia,'Times New Roman',Times,serif;
+    font-size: 34px;
+    color: #FFFFFF;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 0 25px;
+}
+
+.instruct {
+    background-color: #FFFFFF;
+    width: 120vw;
+    height: 480px;
+    margin-top: 10px;
+}
+
+.group {
+    margin: 20px 0 0 40px;
+    display: flex;
+}
+
+.group img {
+    width: 249px;
+    height: 368px;
+}
+
+.contain {
+    background-color: #E9E9EB;
+    margin-left: 50px;
+}
+
+.contain table {
+    margin: 0 auto auto 30px;
+    border-collapse: separate;
+    border-spacing: 40px 50px;
+}
+
+td {
+    padding: 1px;
+}
+
+td .cetak {
+    background-color: #FF914D;
+    border: #FF914D;
+    width: 235px;
+    height: 43px;
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    gap: 10px; /* Adjust spacing between icon and text */
+    padding: 10px; /* Add padding around the button */
+    color: #FFFFFF;
+    transition: 0.3s ease-out;
+}
+
+.cetak:hover {
+    background-color: #F8C3A5;
+    border: #F8C3A5;
+}
+
+.button-text {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+table tr {
+    color: #000000; /* Set font color to black */
+    font-weight: bold;
+    font-family: 'Quicksand',Georgia,'Times New Roman',Times,serif;
+    font-size: 20px;
+}
